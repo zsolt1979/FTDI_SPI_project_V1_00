@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FTDI_SPI_project", "FTDI_SPI_project.csproj", "{1DD230AB-CC7F-4562-B8DC-563D328C1880}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DD230AB-CC7F-4562-B8DC-563D328C1880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD230AB-CC7F-4562-B8DC-563D328C1880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD230AB-CC7F-4562-B8DC-563D328C1880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD230AB-CC7F-4562-B8DC-563D328C1880}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC3F6DBC-53F5-481E-A645-0C1F4F58159B}
+	EndGlobalSection
+EndGlobal
