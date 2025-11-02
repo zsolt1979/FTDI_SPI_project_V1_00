@@ -231,7 +231,7 @@
                                                             <Setter TargetName="Signal_0" Property="Fill" Value="Green" />
                                                             <Setter TargetName="Signal_1" Property="Fill" Value="Green" />
                                                             <Setter TargetName="Signal_2" Property="Fill" Value="Green" />
-                                                            <Setter TargetName="Signal_3" Property="Fill" Value="Yellow" />
+                                                            <Setter TargetName="Signal_3" Property="Fill" Value="Green" />
                                                             <Setter TargetName="Signal_4" Property="Fill" Value="#FF323232" />
                                                             <Setter TargetName="Signal_5" Property="Fill" Value="#FF323232" />
                                                         </DataTrigger>
@@ -240,8 +240,8 @@
                                                             <Setter TargetName="Signal_1" Property="Fill" Value="Green" />
                                                             <Setter TargetName="Signal_2" Property="Fill" Value="Green" />
                                                             <Setter TargetName="Signal_2" Property="Fill" Value="Green" />
-                                                            <Setter TargetName="Signal_3" Property="Fill" Value="Yellow" />
-                                                            <Setter TargetName="Signal_4" Property="Fill" Value="Red" />
+                                                            <Setter TargetName="Signal_3" Property="Fill" Value="Green" />
+                                                            <Setter TargetName="Signal_4" Property="Fill" Value="Yellow" />
                                                             <Setter TargetName="Signal_5" Property="Fill" Value="#FF323232" />
                                                         </DataTrigger>
                                                         <DataTrigger Binding="{Binding Meter_Scale}" Value="6">
@@ -249,8 +249,8 @@
                                                             <Setter TargetName="Signal_1" Property="Fill" Value="Green" />
                                                             <Setter TargetName="Signal_2" Property="Fill" Value="Green" />
                                                             <Setter TargetName="Signal_2" Property="Fill" Value="Green" />
-                                                            <Setter TargetName="Signal_3" Property="Fill" Value="Yellow" />
-                                                            <Setter TargetName="Signal_4" Property="Fill" Value="Red" />
+                                                            <Setter TargetName="Signal_3" Property="Fill" Value="Green" />
+                                                            <Setter TargetName="Signal_4" Property="Fill" Value="Yellow" />
                                                             <Setter TargetName="Signal_5" Property="Fill" Value="Red" />
                                                         </DataTrigger>
 
