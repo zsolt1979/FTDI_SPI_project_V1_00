@@ -143,7 +143,7 @@ namespace FTDI_SPI_project
         {
             if (Device_Connected)
             {
-                Button_Down_Counter_Start(20);
+                Button_Down_Counter_Start(30);
                 Debug.WriteLine("SCA2 button was pressed...");
             }
 
@@ -190,7 +190,7 @@ namespace FTDI_SPI_project
                 {
                     Button_Content.Down_Counter_Value = ($"{i} sec");
                     Debug.WriteLine($"Actual counter value: {i} Dec");
-                    await Task.Delay(500);
+                    await Task.Delay(1000);
                 }
                 Button_Content.Button_Counter_Running = false;
             }
