@@ -17,28 +17,32 @@ using FTDI_SPI_Functions;
 using FTD2XX_NET;
 using System.Collections.ObjectModel;
 using System.Diagnostics.Eventing.Reader;
+using System.Windows.Media.Animation;
 
 namespace FTDI_SPI_project
 {
     public partial class MainWindow : Window
     {
-
         public const int Sensor_Number = 2;
         public static Button_Panel_Content Button_Content = new Button_Panel_Content();
         public static SCA_Sensor_List SensorList = new SCA_Sensor_List();
         public static bool Device_Connected = false;
         public static bool Measurement_Running = false;
+        public static double Left_Test_Variable = 8.0;
+        public static double Right_Test_Variable = -8.0;
 
         public MainWindow()
         {
             InitializeComponent();
-            
 
             Button_Panel.DataContext = Button_Content;
             Sensor_1_Enable_Button.DataContext = Button_Content;
             Sensor_2_Enable_Button.DataContext = Button_Content;
             Angle_Sensor_Data_Panel.DataContext = SensorList;
-
+            Left_Indicator.DataContext = SensorList;
+            Right_Indicator.DataContext = SensorList;
+            CanvasAnimation_Left.DataContext = SensorList;
+            CanvasAnimation_Right.DataContext = SensorList;
         }
 
         public void FTDI_Device_Connect(object sender, RoutedEventArgs e)
@@ -143,7 +147,7 @@ namespace FTDI_SPI_project
         {
             if (Device_Connected)
             {
-                Button_Down_Counter_Start(30);
+                Button_Down_Counter_Start(5);
                 Debug.WriteLine("SCA2 button was pressed...");
             }
 
@@ -160,7 +164,6 @@ namespace FTDI_SPI_project
 
             while (Measurement_Running)
             {
-
                 SCA_Sensor_Full_Read(0);
                 SCA_Sensor_Full_Read(1);
                 Debug.WriteLine(Counter);
@@ -179,6 +182,7 @@ namespace FTDI_SPI_project
             SensorList.FTDI_DataBlock[Sensor_Number].Sensor_X_Axis_Raw = Convert.ToString(FTDI_Calls.SCA_Sensor_Parameters[Sensor_Number].Axis_X_Raw);
             SensorList.FTDI_DataBlock[Sensor_Number].Sensor_Y_Axis_Raw = Convert.ToString(FTDI_Calls.SCA_Sensor_Parameters[Sensor_Number].Axis_Y_Raw);
             SensorList.FTDI_DataBlock[Sensor_Number].Sensor_Angle_Real = Convert.ToString(FTDI_Calls.SCA_Sensor_Parameters[Sensor_Number].Angle_real);
+            SensorList.FTDI_DataBlock[Sensor_Number].Sensor_Indicator_Value = FTDI_Calls.SCA_Sensor_Parameters[Sensor_Number].Angle_real;
         }
 
         public async void Button_Down_Counter_Start(int Start_Number)
@@ -190,11 +194,24 @@ namespace FTDI_SPI_project
                 {
                     Button_Content.Down_Counter_Value = ($"{i} sec");
                     Debug.WriteLine($"Actual counter value: {i} Dec");
-                    await Task.Delay(1000);
+                    await Task.Delay(500);
                 }
                 Button_Content.Button_Counter_Running = false;
             }
         }
 
+        private void Test_Click(object sender, RoutedEventArgs e)
+        {
+            Left_Test_Variable = Math.Round(Left_Test_Variable,1) - 0.2;
+            Right_Test_Variable = Math.Round(Right_Test_Variable,1) + 0.2;
+            SensorList.FTDI_DataBlock[0].Sensor_Indicator_Value = Left_Test_Variable;
+            SensorList.FTDI_DataBlock[1].Sensor_Indicator_Value = Right_Test_Variable;
+            SensorList.FTDI_DataBlock[0].Canvas_Angle = Left_Test_Variable * 5;
+            SensorList.FTDI_DataBlock[1].Canvas_Angle = (Left_Test_Variable * -5);
+            //FTDI_DataBlock[1].Sensor_Angle_Real;
+
+            Debug.WriteLine($"Left value: {Left_Test_Variable}");
+            Debug.WriteLine($"Right value: {Right_Test_Variable}");
+        }
     }
 }

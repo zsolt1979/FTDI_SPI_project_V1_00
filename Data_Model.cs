@@ -33,6 +33,11 @@ namespace FTDI_SPI_project
         private string _sensor_Y_Axis_Raw = string.Empty;
         [ObservableProperty]
         private string _sensor_Angle_Real = string.Empty;
+        [ObservableProperty]
+        private double _sensor_Indicator_Value;
+        [ObservableProperty]
+        private double _canvas_Angle;
+
 
         public SCA_DataBlock()
         {
@@ -41,6 +46,8 @@ namespace FTDI_SPI_project
             Sensor_X_Axis_Raw = "--";
             Sensor_Y_Axis_Raw = "--";
             Sensor_Angle_Real = "--";
+            Sensor_Indicator_Value = 0.0;
+            Canvas_Angle = 30.0;
         }
     }
 
