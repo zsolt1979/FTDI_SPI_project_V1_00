@@ -203,13 +203,13 @@ namespace FTDI_SPI_project
 
         private void Test_Click(object sender, RoutedEventArgs e)
         {
-            Left_Test_Variable = Math.Round(Left_Test_Variable,1) - 0.2;
-            Right_Test_Variable = Math.Round(Right_Test_Variable,1) + 0.2;
-            SensorList.FTDI_DataBlock[0].Sensor_Indicator_Value = Left_Test_Variable;
-            SensorList.FTDI_DataBlock[1].Sensor_Indicator_Value = Right_Test_Variable;
+            //Left_Test_Variable = Math.Round(Left_Test_Variable,1) - 0.2;
+            //Right_Test_Variable = Math.Round(Right_Test_Variable,1) + 0.2;
+            //SensorList.FTDI_DataBlock[0].Sensor_Indicator_Value = Left_Test_Variable;
+            //SensorList.FTDI_DataBlock[1].Sensor_Indicator_Value = Right_Test_Variable;
 
-            Debug.WriteLine($"Left value: {Left_Test_Variable}");
-            Debug.WriteLine($"Right value: {Right_Test_Variable}");
+            //Debug.WriteLine($"Left value: {Left_Test_Variable}");
+            //Debug.WriteLine($"Right value: {Right_Test_Variable}");
         }
     }
 }
