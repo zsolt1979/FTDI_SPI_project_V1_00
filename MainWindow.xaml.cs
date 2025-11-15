@@ -36,8 +36,8 @@ namespace FTDI_SPI_project
             InitializeComponent();
 
             Button_Panel.DataContext = Button_Content;
-            Sensor_1_Enable_Button.DataContext = Button_Content;
-            Sensor_2_Enable_Button.DataContext = Button_Content;
+            //Sensor_1_Enable_Button.DataContext = Button_Content;
+            //Sensor_2_Enable_Button.DataContext = Button_Content;
             Angle_Sensor_Data_Panel.DataContext = SensorList;
             Left_Indicator.DataContext = SensorList;
             Right_Indicator.DataContext = SensorList;
@@ -168,7 +168,7 @@ namespace FTDI_SPI_project
                 SCA_Sensor_Full_Read(1);
                 Debug.WriteLine(Counter);
                 Counter++;
-                await Task.Delay(350);
+                await Task.Delay(250);
             }
             Debug.WriteLine("Info request task ended...");
         }
@@ -183,6 +183,7 @@ namespace FTDI_SPI_project
             SensorList.FTDI_DataBlock[Sensor_Number].Sensor_Y_Axis_Raw = Convert.ToString(FTDI_Calls.SCA_Sensor_Parameters[Sensor_Number].Axis_Y_Raw);
             SensorList.FTDI_DataBlock[Sensor_Number].Sensor_Angle_Real = Convert.ToString(FTDI_Calls.SCA_Sensor_Parameters[Sensor_Number].Angle_real);
             SensorList.FTDI_DataBlock[Sensor_Number].Sensor_Indicator_Value = FTDI_Calls.SCA_Sensor_Parameters[Sensor_Number].Angle_real;
+            SensorList.FTDI_DataBlock[Sensor_Number].Canvas_Angle = (FTDI_Calls.SCA_Sensor_Parameters[Sensor_Number].Angle_real) * 2;
         }
 
         public async void Button_Down_Counter_Start(int Start_Number)
@@ -206,9 +207,6 @@ namespace FTDI_SPI_project
             Right_Test_Variable = Math.Round(Right_Test_Variable,1) + 0.2;
             SensorList.FTDI_DataBlock[0].Sensor_Indicator_Value = Left_Test_Variable;
             SensorList.FTDI_DataBlock[1].Sensor_Indicator_Value = Right_Test_Variable;
-            SensorList.FTDI_DataBlock[0].Canvas_Angle = Left_Test_Variable * 5;
-            SensorList.FTDI_DataBlock[1].Canvas_Angle = (Left_Test_Variable * -5);
-            //FTDI_DataBlock[1].Sensor_Angle_Real;
 
             Debug.WriteLine($"Left value: {Left_Test_Variable}");
             Debug.WriteLine($"Right value: {Right_Test_Variable}");

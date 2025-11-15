@@ -222,7 +222,7 @@ namespace FTDI_SPI_Functions
         {
             int SCA_Dout = (int) Axis_X_Raw - (int) Axis_Y_Raw ;
             double SCA_Angle_Div = (double)(SCA_Dout / 6554.0);
-            double SCA_Angle = Math.Round( ((Math.Asin(SCA_Angle_Div) / 3.14) * 180), 3);
+            double SCA_Angle = Math.Round( ((Math.Asin(SCA_Angle_Div) / 3.14) * 180), 2);
             Debug.WriteLine($"SCA Dout value: {SCA_Dout} Dec ---  SCA Angle: {SCA_Angle} degree");
             return SCA_Angle;
         }

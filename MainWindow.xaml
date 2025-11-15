@@ -120,8 +120,8 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <local:Angulargauge x:Name="CanvasAnimation_Left" Grid.Column="0" AngularValue="{Binding FTDI_DataBlock[0].Canvas_Angle}" AngleLabel="{Binding FTDI_DataBlock[0].Sensor_Angle_Real}" />
-                                <local:Angulargauge x:Name="CanvasAnimation_Right" Grid.Column="1" AngularValue="{Binding FTDI_DataBlock[1].Canvas_Angle}" />
+                                <local:Angulargauge x:Name="CanvasAnimation_Left" Grid.Column="0" AngularValue="{Binding FTDI_DataBlock[0].Canvas_Angle}" AngleLabel="{Binding Path = FTDI_DataBlock[0].Sensor_Angle_Real, StringFormat='{}{0} °'}" AngleLabelInfo="Left"/>
+                                <local:Angulargauge x:Name="CanvasAnimation_Right" Grid.Column="1" AngularValue="{Binding FTDI_DataBlock[1].Canvas_Angle}" AngleLabel="{Binding Path = FTDI_DataBlock[1].Sensor_Angle_Real,StringFormat='{}{0} °'}" AngleLabelInfo="Right"/>
                             </Grid>
                         </Border>
                         <local:IndicatorBar x:Name="Right_Indicator" Grid.Column="3" HorizontalAlignment="Center" IndicatorLabel="Right"  IndicatorValue="{Binding FTDI_DataBlock[1].Sensor_Indicator_Value}" />
@@ -176,7 +176,7 @@
                             <TextBlock Grid.Row="6" Grid.Column="1" Text ="{Binding Path= FTDI_DataBlock[0].Sensor_Angle_Real, StringFormat='{}{0} °'}" FontSize="22" Foreground="#FF40C0F7" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" TextAlignment="Center"  />
                             <TextBlock Grid.Row="6" Grid.Column="3" Text ="{Binding Path= FTDI_DataBlock[1].Sensor_Angle_Real, StringFormat='{}{0} °'}" FontSize="22" Foreground="#FF40C0F7" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" TextAlignment="Center"  />
 
-                            <Button x:Name="Sensor_1_Enable_Button" Grid.Row="7" Grid.Column="1" Width="140" Click="SCA1_Enable">
+                            <!--<Button x:Name="Sensor_1_Enable_Button" Grid.Row="7" Grid.Column="1" Width="140" Click="SCA1_Enable">
                                 <Button.Style>
                                     <Style TargetType="Button">
                                         <Setter Property="Background" Value="Transparent"></Setter>
@@ -271,9 +271,9 @@
                                         </Setter>
                                     </Style>
                                 </Button.Style>
-                            </Button>
+                            </Button>-->
 
-                            <Button x:Name="Sensor_2_Enable_Button" Grid.Row="7" Grid.Column="3" Width="140" Click="SCA2_Enable">
+                            <!--<Button x:Name="Sensor_2_Enable_Button" Grid.Row="7" Grid.Column="3" Width="140" Click="SCA2_Enable">
                                 <Button.Style>
                                     <Style TargetType="Button">
                                         <Setter Property="Background" Value="Transparent"></Setter>
@@ -308,7 +308,7 @@
                                         </Setter>
                                     </Style>
                                 </Button.Style>
-                            </Button>
+                            </Button>-->
 
                         </Grid>
                     </Grid>

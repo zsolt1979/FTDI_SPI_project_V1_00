@@ -55,19 +55,29 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:Angulargauge}">
                     <Grid>
-                        <Border BorderThickness="2" Width="170" Height="170" CornerRadius="5">
-                            <Canvas Width="150" Height="150" RenderTransformOrigin="0.5,0.5">
+                        <Canvas Width="170" Height="170" RenderTransformOrigin="0.5,0.5">
+                            <Ellipse Fill="Transparent" Width="130" Height="130" Stroke="#FF40C0F7" StrokeThickness="3" Canvas.Right="20" Canvas.Bottom="20"/>
+                            <Line X1="85" Y1="10" X2="85" Y2="20" StrokeThickness="2" Stroke="#FF40C0F7" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                            <Line X1="85" Y1="150" X2="85" Y2="160" StrokeThickness="2" Stroke="#FF40C0F7" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                            <Line X1="5" Y1="85" X2="20" Y2="85" StrokeThickness="2" Stroke="#FF40C0F7" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                            <Line X1="150" Y1="85" X2="165" Y2="85" StrokeThickness="2" Stroke="#FF40C0F7" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                            <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Top="120">
+                                <TextBlock Width="170" Text="{TemplateBinding AngleLabelInfo}" Foreground="#FF40C0F7" TextAlignment="Center" FontSize="15" RenderTransformOrigin="0.5,0.5"/>
+                            </Viewbox>
+
+                            <Canvas Width="150" Height="150" Canvas.Left="10" Canvas.Top="10" RenderTransformOrigin="0.5,0.5">
                                 <Canvas.RenderTransform >
                                     <RotateTransform Angle="{Binding AngularValue, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                 </Canvas.RenderTransform>
 
-                                <Ellipse Fill="Transparent" Width="130" Height="130" Stroke="#FF40C0F7" StrokeThickness="3" Canvas.Right="10" Canvas.Bottom="10"/>
                                 <Line X1="20" Y1="75" X2="130" Y2="75" StrokeThickness="2" Stroke="#FF676767" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
-                                <Line X1="20" Y1="75" X2="75" Y2="100" StrokeThickness="2" Stroke="#FF676767" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
-                                <Line X1="75" Y1="100" X2="130" Y2="75" StrokeThickness="2" Stroke="#FF676767" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
-                                <TextBlock Width="150" Text="{TemplateBinding AngleLabel}" Foreground="White" Canvas.Top="40" Canvas.Left="0" HorizontalAlignment="Center" TextAlignment="Center" FontSize="20"/>
+                                <Line X1="20" Y1="75" X2="70" Y2="90" StrokeThickness="2" Stroke="#FF676767" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                <Line X1="70" Y1="90" X2="75" Y2="105" StrokeThickness="2" Stroke="#FF676767" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                <Line X1="75" Y1="105" X2="80" Y2="90" StrokeThickness="2" Stroke="#FF676767" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                <Line X1="80" Y1="90" X2="130" Y2="75" StrokeThickness="2" Stroke="#FF676767" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                <TextBlock Width="150" Text="{TemplateBinding AngleLabel}" Foreground="White" Canvas.Top="40" Canvas.Left="0" HorizontalAlignment="Center" TextAlignment="Center" FontSize="18"/>
                             </Canvas>
-                        </Border>
+                        </Canvas>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

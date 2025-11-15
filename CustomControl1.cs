@@ -171,12 +171,24 @@ namespace FTDI_SPI_project
            nameof(AngleLabel),
            typeof(string),
            typeof(Angulargauge),
-           new PropertyMetadata("Bar"));
+           new PropertyMetadata("---"));
 
        public string AngleLabel
        {
            get => (string)GetValue(AngleLabelProperty);
            set => SetValue(AngleLabelProperty, value);
        }
+
+        public static readonly DependencyProperty AngleLabelInfoProperty = DependencyProperty.Register(
+            nameof(AngleLabelInfo),
+            typeof(string),
+            typeof(Angulargauge),
+            new PropertyMetadata("-"));
+
+        public string AngleLabelInfo
+        {
+            get => (string)GetValue(AngleLabelInfoProperty);
+            set => SetValue(AngleLabelInfoProperty, value);
+        }
     }
 }

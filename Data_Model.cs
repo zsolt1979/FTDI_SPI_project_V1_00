@@ -47,7 +47,7 @@ namespace FTDI_SPI_project
             Sensor_Y_Axis_Raw = "--";
             Sensor_Angle_Real = "--";
             Sensor_Indicator_Value = 0.0;
-            Canvas_Angle = 30.0;
+            Canvas_Angle = 0.0;
         }
     }
 
